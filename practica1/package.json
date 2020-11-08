@@ -1,0 +1,32 @@
+{
+  "name": "practica1",
+  "version": "1.0.0",
+  "description": "API REST",
+  "main": "server.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test npx knex migrate:rollback && npm run test:migrate",
+    "test:migrate": "cross-env NODE_ENV=test npx knex migrate:latest && npm run test:test",
+    "test:test": "cross-env NODE_ENV=test mocha tests --exit",
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "start": "cross-env NODE_ENV=development node server.js"
+  },
+  "author": "Brian Mathias Pesci Juliani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "knex": "^0.21.9",
+    "knex-paginate": "^1.2.3",
+    "moment": "^2.29.1",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
+    "jsdoc": "^3.6.6",
+    "mocha": "^8.2.0",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.0.0"
+  }
+}

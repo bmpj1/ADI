@@ -1,0 +1,13 @@
+Cualquier aplicación REST debe seguir el siguiente patron:
+
+            REST            |       NO REST
+                            |
+GET         /api/users      |       /getUsers
+                            |
+POST        /api/users      |       /addUser
+                            |
+UPDATE      /api/users/:id  |       /updateUser
+                            |
+DELETE      /api/users/:id  |       /deleteUser
+
+REST permite un enrutamiento más sencillo por parte del servidor
