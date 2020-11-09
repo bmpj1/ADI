@@ -5,7 +5,7 @@ const dbHelper = require("../models/dbHelpers")
 // Exportamos las rutas con esto y "module.exports = router" al final del archivo
 const router = express.Router()
 const jwt = require("jwt-simple")
-const { isAdmin, hasAdminsRights } = require('../middleware/auth')
+const { isAdmin, hasAdminsRights, hasUsersRights } = require('../middleware/auth')
 
 /**
  * Metodo que AGREGA UN USUARIO
@@ -75,7 +75,7 @@ router.post("/usuarios", (pet, res) => {
    * @author Brian Mathias Pesci Juliani
    * @returns {json} - json(usuario) o json({ message }) 
    */
-  router.get("/usuarios/:id", (pet, res) => {
+  router.get("/usuarios/:id", hasUsersRights, (pet, res) => {
     const { id } = pet.params;
     var allOK = true;
     if (isNaN(id)) {
