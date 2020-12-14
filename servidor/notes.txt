@@ -1,0 +1,61 @@
+// KNEX MEGARESUMEN!!!: https://devhints.io/knex
+
+// la carpeta node_modules se crea con "npm install -y"
+// Los siguientes pasos SOLO SE REALIZAN AL COMENZAR A CREAR EL PROYECTO
+// una vez estan creadas las dependencias en el package.json 
+// ejecutar solamente "nmp install -y"
+PRIMEROS PASOS PARA CREAR EL SERVIDOR (usar npm install -y ):
+    $ npm install -g nodemon
+    $ npm install express --save
+    $ npm install body-parser --save
+    $ npm i -D nodemon
+    $ npm i sqlite3 knex
+    $ npx knex init             // Esto crea el archivo knexfile.js
+    $ npm install -g jsdoc      // Instalar la herramienta a utilizar para documentar la API
+    $ npm install --save-dev cross-env  // Esta herramienta permite crear variables de entorno de manera compatible con cualquier SO (NODE_ENV=test)
+    $ npm install moment
+    $ npm install supertest mocha chai --save-dev   // Herramientas para realizar los tests (configurar knexfile.js y package.json para NODE_ENV=test)
+    
+    $ npm install cors
+    // Tras instalar cors hay que agregar en el server.js:
+    // var bp = require('body-parser')
+    // var cors = require('cors')
+
+    // server.use(bp.json())
+    // server.use(cors()) 
+
+Crear migraciones:
+    $ npx knex migrate:make [create-name-table]
+
+Ejecutar migraciones para crear la BDD:
+    $ npx knex migrate:latest
+
+En caso de que queramos modificar la migracion ya creada, hay que
+eliminar la BDD anterior para que los cambios se puedan aplicar:
+    $ npx knex migrate:rollback
+
+Lanzar servidor:
+    $ node .\index.js
+Lanzar servidor con nodemon para tener hot-reload (recarga automática de código):
+    $ nodemon .\index.js
+
+Paginacion:     // https://www.npmjs.com/package/knex-paginate
+    $ npm i knex-paginate --save
+    
+Crear documentacion de un archivo (Se genera un html en la carpeta "out"):
+    jsdoc [filename]
+
+TUTORIALES Y AYUDAS:
+/**
+ * Tutorial de ayuda PARA CREAR LA BDD Y LA API: https://www.youtube.com/watch?v=JWMf7AUzMkA&ab_channel=BrettM
+ * https://www.youtube.com/watch?v=qJ5R9WTW0_E&ab_channel=Fazt
+ * Guia KNEX: http://knexjs.org/
+ * Guia Express Testing: https://www.youtube.com/watch?v=uIdbfW2T8NE&ab_channel=FaztCode
+ * APP para ver el esquema de la BDD: https://sqlitestudio.pl/
+ * APP para realizar peticiones a la API: https://insomnia.rest/
+ * Documentar API con JSDOC: https://www.youtube.com/watch?v=Nqv6UkTROak&ab_channel=dcode
+ */
+
+ Scripts del package.json:
+    $ npm run test  // Lanzar tests automaticos
+    $ npm run dev   // Lanzar el servidor en modo desarrollo con hot-reload
