@@ -20,7 +20,7 @@
     "knex": "^0.21.9",
     "knex-paginate": "^1.2.3",
     "moment": "^2.29.1",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.1.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
