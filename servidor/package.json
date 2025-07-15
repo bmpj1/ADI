@@ -17,7 +17,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jwt-simple": "^0.5.6",
-    "knex": "^0.21.9",
+    "knex": "^2.4.0",
     "knex-paginate": "^1.2.3",
     "moment": "^2.29.1",
     "sqlite3": "^5.0.0"
